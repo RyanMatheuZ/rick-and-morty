@@ -6,21 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Ryan Oliveira - Desenvolvedor Front-End">
-    <meta name="keywords" content="Rick and Morty, API">
+    <meta name="description" content="Consuming the API from the Rick and Morty series, with fetch API">
+    <meta name="keywords" content="Rick and Morty, characters, API">
     <meta name="format-detection" content="telephone=no">
-    <meta name="url" content="https://ryan-web.vercel.app">
+    <meta name="url" content="https://ryanmatheuz.github.io/rick-and-morty/">
     <meta name="creator" content="Ryan Matheus de Oliveira">
     <meta name="generator" content="Visual Studio Code">
     <meta name="theme-color" content="#83D2E4">
 
-    <title>Rick and Morty</title>
+    <title>Rick and Morty - Characters</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="" type="image/svg">
+    <link rel="shortcut icon" href="./assets/img/favicon/favicon.svg" type="image/svg">
 
     <!-- Fonts -->
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/main.css">
@@ -30,7 +32,53 @@
 </head>
 
 <body>
-    <h1>0</h1>
+    <main>
+        <section class="section">
+            <form class="form">
+                <label for="input-number" class="form__label">
+                    Enter any number:
+                </label>
+
+                <input 
+                    type="number" 
+                    placeholder="From 1 to 671" 
+                    min="1" 
+                    max="671" 
+                    title="Required field"
+                    id="input-number" 
+                    class="form__input" 
+                    required
+                >
+
+                <button type="submit" class="form__btn-search" title="Check">
+                    Check
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <figure class="footer__image">
+            <img 
+                src="./assets/img/images/rick-and-morty-logo.png" 
+                alt="Rick and Morty"
+                title="Rick and Morty"
+                draggable="false"
+            >
+        </figure>
+
+        <p class="footer__text">
+            <strong>&copy; Rick and Morty - Characters</strong>
+        </p>
+
+        <p class="footer__text">
+            <strong>API available at:</strong>
+
+            <a href="http://rickandmortyapi.com" target="_blank" rel="noopener noreferrer" class="footer__link" title="API Link">
+                rickandmortyapi.com
+            </a>
+        </p>
+    </footer>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 // To run => lessc ./assets/less/main.less ./assets/css/main.css
 
-@import url('./_variables.less');
+@import url("./_variables.less");
+@import url("./_mixins.less");
 
 * {
     box-sizing: border-box;
@@ -10,10 +11,105 @@
 
 html,
 body {
+    font-family: 'Inter', sans-serif;
     height: 100%;
     width: 100%;
 }
 
-h1 {
-    color: @green-color;
+body {
+    background-color: @black-color;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    .flex-center();
+    flex: 1 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section {
+    .flex-center();
+    background-image: url("../img/images/portal-image.png");
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+    width: 900px;
+
+    .form {
+        background-color: @white-color;
+        border-radius: 5px;
+        border: 2px solid @blue-color;
+        max-width: 600px;
+        padding: 3rem;
+
+        &__label {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 400;
+            user-select: none;
+        }
+
+        &__input {
+            border-radius: 5px;
+            border: 2px solid @blue-color;
+            display: block;
+            margin-block: 1.5rem;
+            outline: none;
+            padding: 0.5rem;
+            width: 100%;
+
+            &:out-of-range {
+                border-color: @red-color;
+            }
+
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+        }
+
+        &__btn-search {
+            background-color: @blue-color;
+            border-radius: 5px;
+            border: none;
+            color: @black-color;
+            cursor: pointer;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            outline: none;
+            padding: 0.5rem 1.5rem;
+            text-align: center;
+        }
+    }
+}
+
+.footer {
+    .flex-center();
+    background-color: @white-color;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 1rem;
+
+    &__image {
+        max-width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        color: @black-color;
+        font-size: 1rem;
+        margin-block: 0.5rem;
+        user-select: none;
+    }
+
+    &__link {
+        color: @black-color;
+    }
 }
