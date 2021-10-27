@@ -11,7 +11,7 @@
 
 html,
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     height: 100%;
     width: 100%;
 }
@@ -20,6 +20,13 @@ body {
     background-color: @black-color;
     display: flex;
     flex-direction: column;
+}
+
+h1,
+h2,
+p,
+a {
+    user-select: none;
 }
 
 main {
@@ -41,48 +48,111 @@ a {
 
     .form {
         background-color: @white-color;
+        background-image: url("../img/images/form-background.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         border-radius: 5px;
-        border: 2px solid @blue-color;
-        max-width: 600px;
-        padding: 3rem;
+        display: grid;
+        grid-template-columns: 1.5fr 2fr;
+        margin-inline: 1rem;
+        max-width: 700px;
+        padding: 1.5rem;
+        width: 100%;
 
-        &__label {
-            display: block;
-            font-size: 1.25rem;
+        .form__figure {
+            .flex-center();
+        }
+
+        &__image {
+            border-radius: 5px;
+            border: 1px solid @blue-dark-color;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        &__container {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 1rem;
+        }
+
+        &__block {
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        &__submit {
+            width: 100%;
+        }
+
+        &__title {
+            color: @blue-dark-color;
+            font-size: 1.45rem;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        &__span-one {
+            color: @black-color;
+            font-size: 1.2rem;
             font-weight: 400;
-            user-select: none;
+            width: 100%;
         }
 
         &__input {
             border-radius: 5px;
-            border: 2px solid @blue-color;
-            display: block;
-            margin-block: 1.5rem;
-            outline: none;
-            padding: 0.5rem;
-            width: 100%;
+            border: 1px solid @black-color;
+            caret-color: @blue-dark-color;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            padding-block: 0.25rem;
+            text-align: center;
+            width: 120px;
 
-            &:out-of-range {
-                border-color: @red-color;
+            &:focus {
+                box-shadow: 0 0 0.5px 2px @blue-dark-color;
+                outline: none;
             }
 
-            &::-webkit-inner-spin-button {
-                display: none;
+            &::-webkit-inner-spin-button { 
+                display: none; 
             }
         }
 
-        &__btn-search {
-            background-color: @blue-color;
+        &__btn {
+            background-color: @blue-dark-color;
             border-radius: 5px;
             border: none;
-            color: @black-color;
+            color: @white-color;
             cursor: pointer;
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            outline: none;
-            padding: 0.5rem 1.5rem;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-left: 5px;
+            padding: 0.25rem 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            grid-template-columns: 1fr;
+    
+            &__container {
+                padding-left: 0;
+                padding-top: 1rem;
+            }
+
+            &__submit,
+            &__span-one {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+
+            &__title {
+                text-align: center
+            }
         }
     }
 }
@@ -92,21 +162,18 @@ a {
     background-color: @white-color;
     flex-direction: column;
     flex-shrink: 0;
-    padding: 1rem;
+    padding-bottom: 1rem;
 
     &__image {
         max-width: 200px;
-
-        img {
-            width: 100%;
-        }
+        width: 100%;
     }
 
     &__text {
         color: @black-color;
         font-size: 1rem;
         margin-block: 0.5rem;
-        user-select: none;
+        text-align: center;
     }
 
     &__link {
