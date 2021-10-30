@@ -1,3 +1,5 @@
+<img src="./assets/img/images/rick-and-morty-logo.png" alt="Logo Rick and Morty" title="Logo Rick and Morty" height="80">
+
 # Rick and Morty
 
 ### About
