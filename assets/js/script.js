@@ -1,4 +1,6 @@
-document.getElementById('btn-search').addEventListener('click', () => {
+document.getElementById('btn-search').addEventListener('click', event => {
+    event.preventDefault();
+
     const search = document.getElementById('input-number');
 
     const image = document.getElementById('image');
@@ -8,7 +10,7 @@ document.getElementById('btn-search').addEventListener('click', () => {
 
     if (!search.value || search.value < 1 || search.value > 671) {
         search.style.boxShadow = '0 0 0.5px 2px #F24D4D';
-        search.style.caretColor = '#F24D4D'
+        search.style.caretColor = '#F24D4D';
         search.focus();
 
         return;
@@ -23,7 +25,7 @@ document.getElementById('btn-search').addEventListener('click', () => {
         origin.innerHTML = json.origin.name;
 
         search.value = '';
-        search.style.caretColor = '#062931'
+        search.style.caretColor = '#062931';
         search.style.boxShadow = '';
     });
 });
